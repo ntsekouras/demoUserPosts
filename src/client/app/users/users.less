@@ -1,0 +1,133 @@
+.singleUserCont{
+    position:relative;
+    display: block;
+    overflow:auto;
+    &:after{
+        clear:both;
+    }
+    .userDetsOuterCont{
+        float:left;
+        width:40%;
+        .userDetsCont{
+            padding:50px 20px;
+            .userDetsBtn{
+                .transition(0.3s);
+                display: inline-block;
+                padding: 5px 15px;
+                color:#fff;
+                background:@bgHelper;
+                border: 2px solid transparent;
+                cursor: pointer;
+                &:hover{
+                    background:#fff;
+                    color:@bgHelper;
+                    border-color:@bgHelper;
+                }
+            }
+            .userInfo{
+                margin:0;
+                padding:10px;
+                border:3px solid @bgHelper;
+                .rowField{
+                    label{
+                        font-weight: 600;
+                        color:@bgHelper;
+                        display: inline-block;
+                        width:65px;
+                    }
+                    div{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        .fetchErrorCont{
+            padding:10px;
+            margin:10px 0;
+            color:red;
+            border:1px solid;
+        }
+    }
+    .postsListCont{
+        float:left;
+        width:60%;
+        .postBox{
+            .boxCommon(@bgHelper);
+            padding:0 0 5px;
+            .postBoxHdr{
+                font-size:19px;
+                margin:10px 0;
+                color:@bgHelper;
+            }
+            article{
+    
+            }
+            .commentsOuterCont{
+                .commentsToggleCont{
+                    cursor:pointer;
+                    padding:10px 0;
+                    > div{
+                        display: inline-block;
+                    }
+                    .commentsCount{
+                        text-decoration: underline;
+                        color:@bgHelper;
+                    }
+                    .toggleIcon{
+                        .border-radius(50%);
+                        margin:0 15px;
+                        color: @bgHelper;
+                        border:2px solid;
+                        padding:3px;
+                        width:15px;
+                        height:15px;
+                        text-align:center;
+                        font-size:17px;
+                        line-height: 16px;
+                        font-weight: 600;
+                        vertical-align: middle;
+                    }
+                }
+                .commentsCont{
+                    .commentBox{
+                        .boxCommon(#ccc);
+                        padding: 0 0 10px;
+                        margin: 0 0 0 50px;
+                        h5{
+                            font-size:17px;
+                            margin:0 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+.boxCommon(@color){
+    border-bottom: 1px solid @color;
+    &:last-child{
+        border:0;
+    }
+}
+
+
+@media screen and (max-width: 968px) {
+    .singleUserCont{
+        .postsListCont{
+            .clearBlocks();   
+        }
+        .userDetsOuterCont{
+            .clearBlocks();   
+            .userDetsCont{
+                padding:50px 0;
+            }
+        }
+    }
+}
+
+.clearBlocks{
+    float:none;
+    width:100%;
+}

@@ -1,0 +1,12 @@
+<div class="outerPageCont">
+    <page-header [title]="title"></page-header>
+    <div class="appMainCont">
+        <sidebar class="" [menuItems]="menuItems" [extraContClasses]="sidebarLeft"></sidebar>
+        <section class="appContentSection">
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+</div>
+<!--
+<spinner></spinner>
+ toaster here -->

@@ -1,0 +1,20 @@
+{
+	"env": {
+		"node": true,
+		"es6": true,
+		"mocha": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 2017
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"comma-spacing": ["error", { "before": false, "after": true }],
+		"comma-style": ["error", "last"],
+		"indent": ["error", "tab"],
+		"linebreak-style": ["error", "windows"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"semi-style": ["error", "last"]
+	}
+}

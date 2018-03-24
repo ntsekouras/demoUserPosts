@@ -1,0 +1,146 @@
+@mainTxtColor: #000;
+@mainBg: #fff;
+@bgHelper: #6666BC;
+@gold: #AA7439;
+@green: #277455;
+@blue: #236167;
+
+@appContainerWidth: 1300px;
+
+/* main general functions *******************************************************************************************/
+.transition(@transTime){
+	transition: all @transTime ease-in-out;
+	-webkit-transition: all @transTime ease-in-out;
+}
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.protate(@deg){
+	transform: rotate(@deg);
+    -webkit-transform: rotate(@deg);
+  	-ms-transform: rotate(@deg);
+}
+.background-position(@position){
+	background-position: @position;
+}
+
+.anim(@anim){
+	-webkit-animation: @anim;
+	animation: @anim;
+}
+.transform(@transform){
+	transform: @transform;
+    -webkit-transform: @transform;
+}
+
+.greyScale(@percentage){
+	-webkit-filter: grayscale(@percentage); 
+	filter: grayscale(@percentage);
+}
+
+.columns(@number){
+	-webkit-column-count: @number;
+    -moz-column-count: @number;
+    column-count: @number;
+}
+/********************************************************************/
+
+//import after general helper funcs
+@import './app/users/users.less';
+
+html,body{
+    overflow: auto;
+    padding:0;
+    margin:0;
+}
+
+app-root{
+    background: #eee;
+    .appMainCont{
+        width:100%;
+        max-width: @appContainerWidth;
+        margin:0 auto 50px;
+        .ngAppCont{
+            display: block;
+            position: relative;
+            overflow: auto;
+        }
+        .appContentSection, sidebar{
+            display: block;
+            margin:20px;
+        }
+    }
+}
+
+.menuCont{
+    padding:10px 0;
+    border-bottom:2px solid #666;
+    ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+        li{
+            display: inline-block;
+            padding:5px 15px;
+            &:first-child{
+                padding-left:0;
+            }
+            &.active{
+                color:@bgHelper;
+            }
+        }
+    }
+}
+
+
+.hdrInfoCont{
+    font-size:13px;
+}
+
+.sectionHdrCont{
+    h1{
+        position:relative;
+        display: inline-block;
+        padding:5px 0;
+        font-size:27px;
+        &:before{
+            content:"";
+            position: absolute;
+            bottom:0;
+            left:0;
+            width:35%;
+            height:3px;
+            background: @bgHelper;
+        }
+    }
+}
+
+page-header{
+    display: block;
+    text-align: left;
+    padding:10px;
+    background: @bgHelper;
+    color:#fff;
+    .appHdrCont{
+        .hdrTitleCont{
+            h1{
+                margin:0;
+                font-size:18px;
+            }
+        }
+    }
+}
+
+
+table{
+    th{
+        background: @bgHelper !important;
+        color:#fff !important;
+        text-align:left !important;
+    }
+    td{
+
+    }
+}

@@ -1,0 +1,7 @@
+<aside class="menuCont sidebar {{extraContClasses}}">
+    <ul class="nav sidebar-nav">
+        <li *ngFor="let item of menuItems" class="nav-link" [routerLink]="item.link" routerLinkActive="active" [attr.data-link]="item.link">
+            <span>{{item.label}}</span>
+        </li>
+    </ul>
+</aside>

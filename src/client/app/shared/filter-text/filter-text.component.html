@@ -1,0 +1,6 @@
+﻿<form>
+  <div class="mdl-textfield mdl-js-textfield">
+    <!--<label class="mdl-textfield__label" for="filterText"><span></span></label>-->
+    <input type="text" id="filterText" class="mdl-textfield__input" [(ngModel)]="filter" (keyup)="filterChanged($event)" placeholder="filter..." />
+  </div>
+</form>

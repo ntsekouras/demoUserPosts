@@ -1,0 +1,56 @@
+<section *ngIf="user" class="ngAppCont">
+    <div class="singleUserCont">
+        <div class="postsListCont">
+            <div class="sectionHdrCont">
+                <h1>{{user.name}} <span class="hdrInfoCont">- posts ({{user?.posts?.length}})</span></h1>
+            </div>
+            <div *ngFor="let p of user.posts; let i=index;" class="postBox" [attr.data-postid]="p.Id">
+                <h4 class="postBoxHdr">{{i + 1}}. {{p.title}}</h4>
+                <article>{{p.body}}</article>
+                <div class="commentsOuterCont">
+                    <div class="commentsToggleCont" (click)="showHideComments(p)">
+                        <div class="commentsCount">
+                            {{p.comments?.length}} comments
+                        </div>
+                        <div class="toggleIcon"><i [class]="p.showComments ? 'fa fa-minus' : 'fa fa-plus'"></i></div>
+                    </div>
+                    <div *ngIf="p.showComments" class="commentsCont">
+                        <div *ngFor="let c of p.comments; let i=index;" class="commentBox">
+                            <h5>{{c.name}}</h5>
+                            <div>{{c.body}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="userDetsOuterCont">
+            <div class="userDetsCont">
+                <div class="userDetsBtn" (click)="fetchUserDets()">View User Details</div>
+                <div *ngIf="fetchedUser" class="userInfo">
+                    <div class="rowField">
+                        <label>name:</label>
+                        <div>{{fetchedUser.name}}</div>
+                    </div>
+                    <div class="rowField">
+                        <label>email:</label>
+                        <div>{{fetchedUser.email}}</div>
+                    </div>
+                    <div class="rowField">
+                        <label>address:</label>
+                        <div>{{fetchedUser.address?.street}}  {{fetchedUser.address?.zipcode}}, {{fetchedUser.address?.city}}</div>
+                    </div>
+                    <div class="rowField">
+                        <label>phone:</label>
+                        <div>{{fetchedUser.phone}}</div>
+                    </div>
+                    <div class="rowField">
+                        <label>website:</label>
+                        <div>
+                            <a [attr.href]="fetchedUser.website" target="_blank">{{fetchedUser.website}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
