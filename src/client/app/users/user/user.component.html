@@ -46,7 +46,7 @@
                     <div class="rowField">
                         <label>website:</label>
                         <div>
-                            <a [attr.href]="fetchedUser.website" target="_blank">{{fetchedUser.website}}</a>
+                            <a [attr.href]="'http://' + fetchedUser.website" target="_blank">{{fetchedUser.website}}</a>
                         </div>
                     </div>
                 </div>
